@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: bara-ui
-        image: lionel411/bara-ui
+        image: lionel411/bara-ui:82bd3c554339128b976964de6e475442c57fac0c
         ports:
         - containerPort: 80
