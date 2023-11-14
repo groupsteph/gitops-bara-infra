@@ -1,0 +1,20 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bara-api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: bara-api
+  template:
+    metadata:
+      labels:
+        app: bara-api
+    spec:
+      containers:
+      - name: bara-api
+        image: lionel411/bara-api
+        ports:
+        - containerPort: 8080
