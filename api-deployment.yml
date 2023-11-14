@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: bara-api
-        image: lionel411/bara-api:db455cdcd0c677acd705128c7a701631029dc163
+        image: lionel411/bara-api:25a03ed3dc36c3a55a3bb262e8055c2c67a1aafa
         ports:
         - containerPort: 8080
