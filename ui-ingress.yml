@@ -4,7 +4,10 @@ kind: Ingress
 metadata:
   name: bara-ui
   annotations:
-    kubernetes.io/ingress.class: gce
+    kubernetes.io/ingress.global-static-ip-name: "bara-ui-ip"
+    kubernetes.io/ingress.allow-http: "true"
+    kubernetes.io/ingress.class: "gce"
+    networking.gke.io/managed-certificates: managed-cert
 spec:
   rules:
   - http:
@@ -13,3 +16,18 @@ spec:
         backend:
           serviceName: bara-ui
           servicePort: 80
+
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: bara-ui-ingress
+#   annotations:
+#     kubernetes.io/ingress.global-static-ip-name: "bara-ui-ip"
+#     kubernetes.io/ingress.allow-http: "true"
+#     kubernetes.io/ingress.class: "gce"
+# spec:
+#   defaultBackend:
+#     service:
+#       name: bara-ui
+#       port:
+#         number: 80
